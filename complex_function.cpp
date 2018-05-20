@@ -36,24 +36,20 @@ Complex Complex::operator*(Complex b) {
 }
 
 Complex Complex::operator/(Complex b) {
-	Complex a = *this;
+	Complex a = *this, result;
 	double x1, x2, x3;
 	x1 = (a.re * b.re) + (a.im * b.im);
 	x2 = (b.re * a.im) - (a.re * b.im);
 	x3 = (b.re * b.re) + (b.im * b.im);
 
-	if (x2 > 0) {
-		cout << "Result division: " << x1 << "/" << x3 << "+" << x2 << "/" << x3 << "i" << endl;
-	}
-	else
-		cout << "Result division: " << x1 << "/" << x3 << x2 << "/" << x3 << "i" << endl;
-	return a;
+	result.re = x1 / x3;
+	result.im = x2 / x3;
+
+	return result;
 }
 
 istream &operator>>(istream &in, Complex &c) {
-	//cout << "Enter Real part: ";
 	in >> c.re;
-	//cout << "Enter Imag part: ";
 	in >> c.im;
 	return in;
 }
@@ -110,6 +106,7 @@ void Complex::EnterOperation(Complex a, Complex b) {
 			  break;
 	case '/': {
 		result = a / b;
+		cout << result;
 	}
 			  break;
 	default: {
