@@ -55,7 +55,7 @@ istream &operator>>(istream &in, Complex &c) {
 }
 
 ostream &operator<<(ostream &out, Complex &c) {
-	int Re, Im;
+	double Re, Im;
 	if (c.im < 0) {
 		out << c.re << "+i(" << c.im << ")" << endl;
 		Re = c.re;
