@@ -1,4 +1,3 @@
-#include "stdafx.h"
 #include "complex.h"
 
 Complex::Complex(double re, double im) {
@@ -73,7 +72,7 @@ ostream &operator<<(ostream &out, Complex &c) {
 	}
 
 	ofstream f;
-	f.open("C:\\Users\\Àíäðåé\\Desktop\\complex.txt", ios::out);
+	f.open("C:\\Users\\Ã€Ã­Ã¤Ã°Ã¥Ã©\\Desktop\\complex.txt", ios::out);
 	f << Re << "\t";
 	f << Im;
 	f.close();
